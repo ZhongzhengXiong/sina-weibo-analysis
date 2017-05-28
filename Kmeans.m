@@ -1,6 +1,6 @@
 function output = K_means( data, k )
-%K-means 对数据进行k-means聚类
-%
+%对数据进行聚类
+%data为[N, D]大小数据，K为聚类数
 
 
 end
