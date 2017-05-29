@@ -8,7 +8,7 @@ hour = M(:, 6).';
 dayIndex = 1:31;
 n = hist(day, dayIndex);
 figure();
-plot(dayIndex, n, '-b.');
+plot(dayIndex, n,  '-b.');
 xlabel('ÈÕ', 'FontSize', 15);
 ylabel('Î¢²©ÊýÁ¿', 'FontSize', 15);
 
