@@ -15,17 +15,14 @@ ylabel('微博数量', 'FontSize', 15);
 
 % tweet weekly
 len = size(day, 2);
-week = zeros(1, len);
-for i = 1:len
-    week(i) = weekday(datestr([year(i), month(i), day(i), 0, 0, 0]));
-end
+week = weekday(datenum(year, month, day) - 1);
 weekIndex = 1:7;
 n = hist(week, weekIndex);
 figure();
 plot(weekIndex, n, '-r+');
 xlabel('星期', 'FontSize', 15);
 ylabel('微博数量', 'FontSize', 15);
-weekString = {'周日', '周一', '周二', '周三', '周四', '周五', '周六'};
+weekString = { '周一', '周二', '周三', '周四', '周五', '周六', '周日'};
 ax = gca;
 set(ax, 'XTick', weekIndex, 'XTickLabel', weekString, 'FontSize', 10);
 ax.XTickLabelRotation = 45;
