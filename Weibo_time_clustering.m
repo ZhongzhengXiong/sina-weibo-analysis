@@ -107,7 +107,7 @@ clusterBound(1) = clusterUsernum(1);
 for i = 2:k
     clusterBound(i) = clusterUsernum(i) + clusterBound(i-1);
 end
-clusterBound = [0 clusterBound];
+clusterBound = [0  clusterBound];
 IDX = [IDX (1:userNum).'];
 
 % 绘出每一类的日发布量每周图
@@ -115,7 +115,7 @@ IDX_weekday = [IDX (userWeekdayNum./repmat(tweetsNum.', 1,7))];
 IDX_weekday = sortrows(IDX_weekday, [1, 2]);
 for i = 1:k
     clusterMatrix = IDX_weekday(clusterBound(i)+1:clusterBound(i+1), :);
-    figure();
+    figure(); 
     hold on;
     plot(clusterMatrix(:,2).', clusterMatrix(:,3).', '-g.');
     plot(clusterMatrix(:,2).', clusterMatrix(:,4).', '-m.');
